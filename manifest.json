@@ -12,6 +12,9 @@
     "versionName" : "1.2.0",
     "versionCode" : 120,
     "app-plus" : {
+				"usingComponents": true,
+				"nvueCompiler": "uni-app",
+				"nvueStyleCompiler" : "uni-app",
         "compatible" : {
             "ignoreVersion" : true
         },
@@ -29,7 +32,9 @@
             "OAuth" : {},
             "Messaging" : {},
             "VideoPlayer" : {},
-            "Share" : {}
+            "Share" : {},
+            "Webview-x5" : {},
+            "UIWebview" : {}
         },
         "distribute" : {
             "android" : {
@@ -74,27 +79,32 @@
                 "ad" : {},
                 "maps" : {},
                 "share" : {}
-            },
-            "splashscreen" : {
-                "iosStyle" : "storyboard",
-                "androidStyle" : "common"
             }
         },
         "compilerVersion" : 3,
-        "nvueLaunchMode" : "fast"
-    },
+        "nvueLaunchMode" : "fast",
+				"splashscreen" : {
+						"alwaysShowBeforeRender": true,
+						"waiting": true,
+						"autoclose": true,
+						"delay": 0,
+						"iosStyle" : "storyboard",
+						"androidStyle" : "common"
+				}
+		},
     // 5+App特有相关
     "quickapp" : {},
     // 快应用特有相关
     "mp-weixin" : {
         "setting" : {
             "urlCheck" : false,
-            "es6" : true,
+            "es6" : false,
             "postcss" : true,
-            "minified" : true
+            "minified" : true,
+						"checkSiteMap": false
         },
         "usingComponents" : true,
-        "appid" : "wx4277c1145515b274",
+        "appid" : "wx53f537d9f6a125bb",
         "permission" : {
             "scope.userLocation" : {
                 "desc" : "你的位置信息将用于小程序位置接口的效果展示"
@@ -102,17 +112,18 @@
         }
     },
     "h5" : {
-        "template" : "template.h5.html",
+        "template" : "index.html",
         "router" : {
-            "mode" : "hash",
-            "base" : "/uniappDemo/"
+            "mode" : "history",
+            "base" : "/"
         },
         "optimization" : {
             "treeShaking" : {
                 "enable" : true
             }
         }
-    }
+    },
+    "vueVersion" : "3"
 }
 // 小程序特有相关
 

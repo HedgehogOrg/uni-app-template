@@ -11,7 +11,7 @@ export const publicShare = publicShareFun;
 import appShareFun, {closeShare} from '@/uni_modules/zhouWei-APPshare/js_sdk/appShare';
 // APP分享
 export const appShare = function(data,callbcak){
-	let userInfo = store.state.userInfo;
+	let userInfo = store.state.user.userInfo;
 	if(!(userInfo && userInfo.uid)){
 		userInfo = uni.getStorageSync("userInfo");
 	}
@@ -60,7 +60,7 @@ export const wxShare = function (data = {}) {
 	if(data.imageUrl){
 		shareInfo.imageUrl = data.imageUrl;
 	}
-	let userInfo = store.state.userInfo;
+	let userInfo = store.state.user.userInfo;
 	if(!(userInfo && userInfo.uid)){
 		userInfo = uni.getStorageSync("userInfo");
 	}

@@ -1,10 +1,13 @@
 <template>
 	<view class="protocol_page">
-		<z-nav-bar title="协议"></z-nav-bar>
+		<uni-nav-bar title="协议"></uni-nav-bar>
 		<!-- 公共组件-每个页面必须引入 -->
 		<public-module></public-module>
 		<view class="title">{{title}}</view>
-		<jyf-parser ref="article"></jyf-parser>
+		<view class="content">
+			<!-- TODO: maybe需转tag -->
+			{{content}}
+		</view>
 	</view>
 </template>
 
@@ -13,7 +16,8 @@ export default {
 	data() {
 		return {
 			type:1000,
-			title:"用户协议"
+			title:"用户协议",
+			content: ''
 		};
 	},
 	//第一次加载
@@ -40,7 +44,7 @@ export default {
 					type: this.type
 				})
 				.then(res => {
-					this.$refs.article.setContent(res);
+					this.content = res
 				});
 		}
 	},

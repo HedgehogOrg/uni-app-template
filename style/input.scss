@@ -91,7 +91,8 @@
 	
 		&::after {
 			content: "";
-			@include bis('https://qn.kemean.cn/upload/201908/05/5f85ccc4de404cafb30b15dedef41e8b', 100% 100%);
+			background-image: url('https://qn.kemean.cn/upload/201908/05/5f85ccc4de404cafb30b15dedef41e8b');
+			@include bis(100% 100%);
 			width: 108upx;
 			height: 58upx;
 		}
@@ -159,7 +160,8 @@
 	
 		&::after {
 			content: '';
-			@include bis('http://qn.kemean.cn/upload/202009/17/1600306951172qyyjj3hh.png', 100% 100%);
+			background-image: url('http://qn.kemean.cn/upload/202009/17/1600306951172qyyjj3hh.png');
+			@include bis(100% 100%);
 			width: 12upx;
 			height: 20upx;
 			margin-left: 24upx;
@@ -222,18 +224,14 @@
 				width: 44upx;
 				height: 44upx;
 				background-image: url('https://qn.kemean.cn/upload/201908/05/df40b98b77fc4c42a5e0327c62975e29');
-				background-position: center center;
-				background-repeat: no-repeat;
-				background-size: 100% 100%;
+				@include bis(100% 100%);
 			}
 	
 			&.upload {
 				border: none;
-                background-color: #f7f7f7;
-				background-image: url(./static/icon/ic_upload.png);
-				background-position: center center;
-				background-repeat: no-repeat;
-				background-size: 60% 60%;
+				background-color: #f7f7f7;
+				background-image: url('./static/icon/ic_upload.png');
+				@include bis(100% 100%);
 			}
 		}
 	}
@@ -336,7 +334,8 @@
 		align-items: center;
 		&.arrow::after {
 			content: '';
-			@include bis('./static/icon/me_lise_more.png', 100% 100%);
+			background-image: url('./static/icon/me_lise_more.png');
+			@include bis(100% 100%);
 			width: 12upx;
 			height: 22upx;
 			margin-left: 20upx;

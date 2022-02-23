@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<z-nav-bar backState="2000" title="首页"></z-nav-bar>
+		<uni-nav-bar title="首页"></uni-nav-bar>
 		<!-- 公共组件-每个页面必须引入 -->
 		<public-module></public-module>
 		<!-- banner -->
@@ -28,11 +28,11 @@ export default {
 			videoUrl: '',
 			videoShow: false,
 			swiperIndex: 0,
-			bannerList: [1, 1, 1, 1]
+			bannerList: [1, 2, 3, 4]
 		};
 	},
 	computed: {
-		...mapState(['userInfo'])
+		...mapState(['user'])
 	},
 	//第一次加载
 	onLoad(e) {
@@ -56,6 +56,7 @@ export default {
 		},
 		// 轮播图点击
 		onBanner(item) {
+			console.log(item);
 			if (item.jumpType == 1201) {
 				// #ifdef H5
 				window.open(item.jumpRecord.webViewUrl);

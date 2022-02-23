@@ -11,13 +11,14 @@ export default {
 	onLaunch: function(e) {
 		//取出缓存数据
 		store.commit('setCacheData');
+		const { token } = store.state.user.userInfo
 		// #ifdef MP-WEIXIN
-		if (store.state.userInfo.token) {
+		if (token) {
 			socket.init();
 		}
 		// #endif
 		// #ifdef H5
-		if (store.state.userInfo.token) {
+		if (token) {
 			socket.init();
 		} else {
 			h5Login('force', () => {
@@ -26,7 +27,7 @@ export default {
 		}
 		// #endif
 		// #ifdef APP-PLUS
-		if (store.state.userInfo.token) {
+		if (token) {
 			socket.init();
 		}
 		APPUpdate();

@@ -119,7 +119,7 @@ $http.requestStart = function(options) {
 	}
 	// #endif
 	//请求前加入token
-	let storeUserInfo = store.state.userInfo;
+	let storeUserInfo = store.state.user.userInfo;
 	if(!storeUserInfo.token){ // nvue页面读取不到vuex里面数据，将取缓存
 	    storeUserInfo = uni.getStorageSync("userInfo");
 	}

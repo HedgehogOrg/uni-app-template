@@ -182,4 +182,4 @@ Crypto.mode = {};
 
 })();
 
-module.exports = Crypto;
+export default Crypto;

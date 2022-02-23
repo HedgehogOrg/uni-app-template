@@ -3,7 +3,7 @@ import {
 	judgePermission
 } from './permission'
 // #endif
-import Vue from 'vue';
+
 // 身份证格式校验
 export const checkIdCard = function(sIdCard) {
 	//Wi 加权因子 Xi 余数0~10对应的校验码 Pi省份代码
@@ -544,8 +544,7 @@ export const getAppWxLatLon = function(successCallback, errCallback) {
 }
 
 //金额过滤
-Vue.filter('money', function(val) {
-	console.log(val);
+export const money = function(val) {
 	if (val) {
 		let value = Math.round(parseFloat(val) * 100) / 100;
 		let valMoney = value.toString().split(".");
@@ -563,28 +562,7 @@ Vue.filter('money', function(val) {
 	} else {
 		return "0.00";
 	}
-});
-//时间距离现在多少天前
-Vue.filter('dateDiff', function(val) {
-	if (val) {
-		return clickDateDiff(val);
-	} else {
-		return "";
-	}
-});
-// 时间格式化
-Vue.filter('timeFormat', function(val, fmt = 'yyyy-MM-dd hh:mm:ss') {
-	if (val) {
-		if(typeof val == "string"){
-			let timeText = val.replace(/-/g, "/");
-			return new Date(timeText).format(fmt);
-		} else if(typeof val == "number"){
-			return new Date(val).format(fmt);
-		}
-	} else {
-		return "";
-	}
-});
+};
 // #ifdef APP-PLUS
 // 文字换行
 function drawtext(text, maxWidth) {

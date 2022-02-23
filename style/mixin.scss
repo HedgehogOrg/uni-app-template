@@ -13,9 +13,8 @@ $themeColor: #ea552d;
 		background-image: url($path + "static/icon/ic_gender_selected.png");
 	}
 }
-// 背景图片地址和大小
-@mixin bis($url, $size: cover) {
-  background-image: url($url);
+// 背景图片大小
+@mixin bis($size: cover) {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: $size;

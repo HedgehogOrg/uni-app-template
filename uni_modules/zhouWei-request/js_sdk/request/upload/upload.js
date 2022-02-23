@@ -1,11 +1,11 @@
 import request from "./../core/request.js";
-const {
+import {
 	chooseImage,
 	chooseVideo,
 	qiniuUpload,
 	aliUpload,
 	urlUpload
-} = require("./utils");
+} from "./utils.js";
 import {
 	mergeConfig
 } from "./../core/utils.js";

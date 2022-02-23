@@ -5,7 +5,7 @@
  * http://code.google.com/p/crypto-js/wiki/License
  */
 
-const Crypto = require('./crypto.js');
+import Crypto from './crypto.js';
 
 (function(){
 
@@ -83,4 +83,4 @@ SHA1._blocksize = 16;
 
 })();
 
-module.exports = Crypto;
+export default Crypto;

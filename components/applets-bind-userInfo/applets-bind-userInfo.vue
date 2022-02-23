@@ -8,7 +8,7 @@
 				<view class="platformName">{{ base.platformName }}</view>
 				<view class="description">需要获取用户头像和昵称</view>
 			</view>
-			<button type="primary" @click="onAuthorization">授权</button>
+			<button class="loginButton" type="primary" @click="onAuthorization">授权</button>
 		</view>
 	</view>
 </template>
@@ -23,7 +23,7 @@ export default {
 		};
 	},
 	computed: {
-		...mapState(['userInfo', 'bindUserInfoShow'])
+		...mapState(['user', 'bindUserInfoShow'])
 	},
 	methods: {
 		...mapMutations(['setUserInfo', 'setBindUserInfoShow']),
@@ -45,7 +45,7 @@ export default {
 			});
 		},
 		closeLogin() {
-			if (this.bindUserInfoShow && this.userInfo.token) {
+			if (this.bindUserInfoShow && this.user.userInfo.token) {
 				this.setBindUserInfoShow(false);
 			}
 		},
@@ -104,7 +104,7 @@ export default {
 		}
 	}
 
-	button {
+	.loginButton {
 		border-radius: 0upx;
 		background-color: $themeColor;
 	}

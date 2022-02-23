@@ -1,6 +1,6 @@
 <template>
 	<view class="page">
-		<z-nav-bar></z-nav-bar>
+		<uni-nav-bar></uni-nav-bar>
         <!-- 公共组件-每个页面必须引入 -->
         <public-module></public-module>
 		<view class="title">注册</view>
@@ -227,7 +227,7 @@ export default {
 		margin-top: 40rpx;
 		button {
 			font-size: 32rpx;
-			@include theme('btn_bg')
+			@include theme('btn_bg');
 			color: #fff;
 			height: 100rpx;
 			line-height: 100rpx;

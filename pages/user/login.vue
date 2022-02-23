@@ -1,6 +1,6 @@
 <template>
 	<view class="register_page">
-		<z-nav-bar :shadow="false"></z-nav-bar>
+		<uni-nav-bar :shadow="false"></uni-nav-bar>
 		<!-- 公共组件-每个页面必须引入 -->
 		<public-module></public-module>
 		<view class="logo">
@@ -501,7 +501,7 @@
 				border-radius: 8rpx;
 
 				&.active {
-					@include theme('btn_bg')
+					@include theme('btn_bg');
 					color: #fff;
 				}
 			}

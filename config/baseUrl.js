@@ -42,8 +42,9 @@ const phoneRegular = /^1\d{10}$/;
 const mailRegular = /^\w+@\w+(\.[a-zA-Z]{2,3}){1,2}$/;
 //密码验证正则表达式
 const passwordRegular = /^[a-zA-Z0-9]{4,10}$/;
-export default Object.assign({
+export default {
 	phoneRegular,
 	mailRegular,
-	passwordRegular
-}, courtConfig);
+	passwordRegular,
+	...courtConfig
+};

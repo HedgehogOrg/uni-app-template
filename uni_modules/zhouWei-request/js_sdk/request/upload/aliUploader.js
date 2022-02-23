@@ -1,7 +1,7 @@
-const Base64 = require('./Base64.js');
-require('./hmac.js');
-require('./sha1.js');
-const Crypto = require('./crypto.js');
+import Base64 from './Base64.js';
+import './hmac.js';
+import './sha1.js';
+import Crypto from './crypto.js';
 // 获取policy
 const getPolicyBase64 = function (timeout) {
     let dateTime = new Date().getTime();
@@ -37,4 +37,4 @@ const getAliyunOssKey = function (options) {
 	}
 }
 
-module.exports = getAliyunOssKey;
+export default getAliyunOssKey;

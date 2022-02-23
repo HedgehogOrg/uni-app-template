@@ -2,7 +2,7 @@
  * 本模块封装了Android、iOS的应用权限判断、打开应用权限设置界面、以及位置系统服务是否开启
  */
 
-var isIos
+letisIos
 // #ifdef APP-PLUS
 isIos = (plus.os.name == "iOS")
 // #endif
@@ -176,7 +176,7 @@ function judgeIosPermissionMemo() {
 }
 
 // Android权限查询
-function requestAndroidPermission(permissionID, permissionName) {
+export function requestAndroidPermission(permissionID, permissionName) {
 	return new Promise((resolve, reject) => {
 		plus.android.requestPermissions(
 			[permissionID], // 理论上支持多个权限同时查询，但实际上本函数封装只处理了一个权限的情况。有需要的可自行扩展封装
@@ -218,7 +218,7 @@ function requestAndroidPermission(permissionID, permissionName) {
 }
 
 // 使用一个方法，根据参数判断权限
-function judgePermission(permissionID, callback) {
+export function judgePermission(permissionID, callback) {
 	function handle(res) {
 		callback && callback(res.result);
 		if (res.result === -1) {
@@ -293,7 +293,7 @@ function judgePermission(permissionID, callback) {
 }
 
 // 跳转到**应用**的权限页面
-function gotoAppPermissionSetting() {
+export function gotoAppPermissionSetting() {
 	if (isIos) {
 		var UIApplication = plus.ios.import("UIApplication");
 		var application2 = UIApplication.sharedApplication();
@@ -320,8 +320,8 @@ function gotoAppPermissionSetting() {
 }
 
 // 检查系统的设备服务是否开启
-// var checkSystemEnableLocation = async function () {
-function checkSystemEnableLocation() {
+//export const checkSystemEnableLocation = async function () {
+export function checkSystemEnableLocation() {
 	if (isIos) {
 		var result = false;
 		var cllocationManger = plus.ios.import("CLLocationManager");
@@ -340,9 +340,9 @@ function checkSystemEnableLocation() {
 	}
 }
 
-module.exports = {
-	judgePermission: judgePermission,
-	requestAndroidPermission: requestAndroidPermission,
-	checkSystemEnableLocation: checkSystemEnableLocation,
-	gotoAppPermissionSetting: gotoAppPermissionSetting
+export default {
+	judgePermission,
+	requestAndroidPermission,
+	checkSystemEnableLocation,
+	gotoAppPermissionSetting
 }

@@ -5,7 +5,7 @@
  * http://code.google.com/p/crypto-js/wiki/License
  */
 
-const Crypto = require('./crypto.js');
+import Crypto from './crypto.js';
 
 (function(){
 
@@ -38,4 +38,4 @@ Crypto.HMAC = function (hasher, message, key, options) {
 
 })();
 
-module.exports = Crypto;
+export default Crypto;

@@ -35,8 +35,8 @@ class socket {
 	//Socket给服务器发送消息
 	send(data, callback) {
 		const _this = this;
-		if (store.state.userInfo.uid) {
-			data.userUid = store.state.userInfo.uid;
+		if (store.state.user.userInfo.uid) {
+			data.userUid = store.state.user.userInfo.uid;
 		}
 		console.log(data);
 		uni.sendSocketMessage({
@@ -87,7 +87,7 @@ class socket {
 		const _this = this;
 		this.send({
 			type: "心跳",
-			userUid: store.state.userInfo.userUid
+			userUid: store.state.user.userInfo.userUid
 		}, (val) => {
 			setTimeout(() => {
 				if (val) {

@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<z-nav-bar backState="2000" title="购物车"></z-nav-bar>
+		<uni-nav-bar title="购物车"></uni-nav-bar>
 		<!-- 公共组件-每个页面必须引入 -->
 		<public-module></public-module>
 	</view>

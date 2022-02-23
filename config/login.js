@@ -40,7 +40,7 @@ function onLogin(type = "judge",callback) {
 								encryptedData: infoRes.encryptedData //包括敏感数据在内的完整用户信息的加密数据
 							};
 							// store.state.chatScenesInfo里面是小程序二维码附带的信息
-							if(store.state.chatScenesInfo.invite){
+							if(store.state.chatScenesInfo && store.state.chatScenesInfo.invite){
 								// 推荐码
 								httpData.invite = store.state.chatScenesInfo.invite;
 							}

@@ -1,5 +1,5 @@
-const qiniuUploader = require("./qiniuUploader");
-const aliUploader =  require('./aliUploader');  
+import qiniuUploader from "./qiniuUploader";
+import aliUploader from './aliUploader';  
 //七牛云上传文件命名
 export const randomChar = function(l, url = "") {
 	const x = "0123456789qwertyuioplkjhgfdsazxcvbnm";

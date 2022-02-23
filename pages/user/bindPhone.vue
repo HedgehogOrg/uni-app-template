@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<z-nav-bar title="绑定手机号"></z-nav-bar>
+		<uni-nav-bar title="绑定手机号"></uni-nav-bar>
 		<!-- 公共组件-每个页面必须引入 -->
 		<public-module></public-module>
 		<view class="bindAccountBox">
@@ -24,12 +24,13 @@
 </template>
 
 <script>
-var clear;
 import { mapState, mapMutations } from 'vuex';
 import socket from '@/config/socket';
 // #ifdef H5
 import {publicShare} from '@/config/utils';
 // #endif
+
+let clear;
 export default {
 	data() {
 		return {
@@ -45,7 +46,10 @@ export default {
 		this.logoUrl = this.$base.logoUrl;
 	},
 	computed: {
-		...mapState(['userInfo','chatScenesInfo'])
+		...mapState({
+			userInfo: s => s.user.userInfo,
+			chatScenesInfo: s => s.chatScenesInfo
+		})
 	},
 	//页面显示
 	onShow() {},
